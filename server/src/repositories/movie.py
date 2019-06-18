@@ -2,6 +2,13 @@
 
 from models import Movie
 
+class MovieALLRepository:
+
+    @staticmethod
+    def get_all():
+        movies=Movie.query.all()
+        return (len(movies),movies)
+
 
 class MovieRepository:
     """ The repository for the movie model """

@@ -8,8 +8,16 @@ from flask_restful import Resource
 from flask_restful.reqparse import Argument
 
 from repositories import MovieRepository
+from repositories import MovieALLRepository
 from util import parse_params
 
+class MovieALLResource(Resource):
+    @staticmethod
+    @swag_from("../swagger/movie/GET_ALL.yml")
+    def get():
+        """ Reeturn the list of movies """
+        movie = MovieALLRepository.get_all()
+        return jsonify({"movies": movie.json})
 
 class MovieResource(Resource):
     """ Verbs relative to the movies """
