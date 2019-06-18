@@ -23,12 +23,12 @@ parameters:
             type: string
             description : the original_language of the movie
         type:
-            type: integer
+            type: string
             description : The type of movie
 
 responses:
   200:
-    description: The user was successfully created
+    description: The movie was successfully created
     schema:
       example:
         movie:

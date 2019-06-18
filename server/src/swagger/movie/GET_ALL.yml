@@ -1,4 +1,4 @@
-Return a movie key information based on his name
+Return a dictionary with all the movies
 ---
 tags:
   - movie
