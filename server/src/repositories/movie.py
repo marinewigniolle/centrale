@@ -7,7 +7,7 @@ class MovieALLRepository:
     @staticmethod
     def get_all():
         movies=Movie.query.all()
-        return (len(movies),movies)
+        return (movies)
 
 
 class MovieRepository:
