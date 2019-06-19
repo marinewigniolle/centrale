@@ -2,10 +2,20 @@ import React from 'react';
 import './Home.css'
 import Titanic from './Titanic.jpg'
 import MammaMia from './MammaMia.jpg'
+import Header from './Header';
+
 
 function Home() {
     return (
-        <div>
+      <div className="App">
+      <header className="App-header">
+
+
+        <Header/>
+
+
+      </header>
+
         <h1 className = "Rubrics">Recommandés pour vous</h1>
 
                 <div class="Pictures">
