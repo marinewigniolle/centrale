@@ -1,6 +1,9 @@
 .Rubrics{
   background-color: white;
   color: black;
+  display : flex;
+  flex-direction : column;
+  justify-content:flex-start;
 }
 
 .Pictures{

@@ -5,13 +5,8 @@ import './Header.css';
 import Home from './Home'
 import superagent from 'superagent'
 
-function Header() {
-const [movie, setMovie] = React.useState(null);
- React.useEffect(() => {
-   superagent
-     .get("http://localhost:5000/application/movies")
-     .then(response => setMovie(response.body.movies));
- }, []);
+function Header(props) {
+
 
   return (
     <div className="App">
@@ -27,54 +22,44 @@ const [movie, setMovie] = React.useState(null);
 
 
       <div className="genres2">
-        <a
+        <button
           className="Genre"
-
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => movie.filter(movie => movie.type = 'cartoon')}
+          onClick={() => props.setDisplayedMovie(props.movie.filter(movie => movie.type === 'Comédie'))}
 
         >
           Comédie
-        </a>
+        </button>
 
-        <a
+        <button
           className="Genre"
-          href="https://www.netflix.com/browse/genre/8711?bc=34399"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => props.setDisplayedMovie(props.movie.filter(movie => movie.type === 'Horreur'))}
+
         >
           Horreur
-        </a>
-        <a
+        </button>
+        <button
           className="Genre"
-          href="https://www.netflix.com/browse/genre/8711?bc=34399"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => props.setDisplayedMovie(props.movie.filter(movie => movie.type === 'Thriller'))}
+
         >
           Thriller
-        </a>
-        <a
+        </button>
+        <button
           className="Genre"
-          href="https://www.netflix.com/browse/genre/8711?bc=34399"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => props.setDisplayedMovie(props.movie.filter(movie => movie.type === 'Documentaire'))}
+
         >
           Documentaire
-        </a>
-        <a
+        </button>
+        <button
           className="Genre"
-          href="https://www.netflix.com/browse/genre/8711?bc=34399"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => props.setDisplayedMovie(props.movie.filter(movie => movie.type === 'Action'))}
+
         >
           Action
-        </a>
+        </button>
 
-        <form >
-            <input type="text" placeholder="Search.." name="search"/>
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+            <input type="text" placeholder="Search.." name="search" value={props.research} onChange={(event) => props.setResearch(event.target.value)}/>
 
         </div>
 
