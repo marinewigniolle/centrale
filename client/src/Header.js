@@ -2,8 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import popcorn from './popcorn.png'
 import './Header.css';
+import Home from './Home'
+import superagent from 'superagent'
 
 function Header() {
+const [movie, setMovie] = React.useState(null);
+ React.useEffect(() => {
+   superagent
+     .get("http://localhost:5000/application/movies")
+     .then(response => setMovie(response.body.movies));
+ }, []);
+
   return (
     <div className="App">
       <header className="genres">
@@ -20,9 +29,11 @@ function Header() {
       <div className="genres2">
         <a
           className="Genre"
-          href="https://www.netflix.com/browse/genre/6548?bc=34399"
+
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => movie.filter(movie => movie.type = 'cartoon')}
+
         >
           Comédie
         </a>

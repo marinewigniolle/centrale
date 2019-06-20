@@ -2,16 +2,32 @@ import React from 'react';
 import './Home.css'
 import Titanic from './Titanic.jpg'
 import MammaMia from './MammaMia.jpg'
+import Movie from './movie'
+import superagent from 'superagent'
+import Header from './Header'
 
 function Home() {
+const [movie, setMovie] = React.useState(null);
+ React.useEffect(() => {
+   superagent
+     .get("http://localhost:5000/application/movies")
+     .then(response => setMovie(response.body.movies));
+ }, []);
+
+
+
     return (
-        <div>
+    <div>
+        <header >
+
+            <Header/>
+
+        </header>
+
+
         <h1 className = "Rubrics">Recommandés pour vous</h1>
 
-                <div class="Pictures">
-                <MovieTitle title='Titanic' image={Titanic} url="https://www.youtube.com/watch?v=LD8dyWYuX0g&t=2s"/>
-                <MovieTitle title='Mamma Mia!' image={MammaMia} url="https://www.youtube.com/watch?v=w3MOV3cYHqA"/>
-                </div>
+
 
          <h1 className = "Rubrics">Les mieux notés</h1>
 
@@ -20,7 +36,7 @@ function Home() {
 
 
         <h1 className= "Rubrics">Tous les films</h1>
-
+        <p className="list">  {movie && movie.map(movie => (<div> {movie.title} </div>))} </p>
         </div>
     )
 }

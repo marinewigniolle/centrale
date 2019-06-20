@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Movie from './movie';
+import Home from './Home';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <header className="App-header">
 
 
-        <Movie/>
+        <Home/>
 
 
       </header>
