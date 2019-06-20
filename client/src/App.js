@@ -11,6 +11,7 @@ function App() {
   return (
        <Router>
       <div className="App">
+<<<<<<< HEAD
         <img src={popcorn} className="App-logo" alt="logo" />
       <AuthButton />
         <ul>
@@ -42,6 +43,38 @@ function Protected() {
   return <Link to={'/page'}>Ma page</Link>;
 }
 
+=======
+      <img src={popcorn} className="App-logo" alt="logo" />
+      <AuthButton />
+        <ul>
+            <h1><Link to="/protected">Ma page</Link></h1>
+        <Route path="/login" component={Login} />
+        <PrivateRoute path="/protected" component={Protected} />
+        <PrivateRoute path="/page" component={Home} />
+        <hr />
+      <p>Pas encore inscrit ?</p><Link to="/register">Inscrivez-vous !</Link>
+        </ul>
+
+      </div>
+    </Router>
+  );
+}
+function Mapage() {
+    return <Link to={'/home'}>Ma page</Link>;
+}
+
+function Register() {
+  return (
+    <div>
+      <h2>Inscrivez-vous !</h2>
+    </div>
+  );
+}
+
+function Protected() {
+  return <Link to={'/page'}>Ma page</Link>;
+}
+>>>>>>> d5a9d6a69556ce216a1443b774e35cd03419a7d2
 
 
 const fakeAuth = {
