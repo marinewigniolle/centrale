@@ -2,7 +2,6 @@ import React from 'react';
 import './Home.css'
 import Titanic from './Titanic.jpg'
 import MammaMia from './MammaMia.jpg'
-<<<<<<< HEAD
 import Movie from './movie'
 import superagent from 'superagent'
 import Header from './Header'
@@ -18,39 +17,17 @@ const [DisplayedMovie, setDisplayedMovie] = React.useState(null);
      .get("http://localhost:5000/application/movies")
      .then(response => {setDisplayedMovie(response.body.movies); setMovie(response.body.movies)})
 
-=======
-import Header from './Header';
-
-
-import Movie from './movie'
-import superagent from 'superagent'
-
-
-function Home() {
-const [movie, setMovie] = React.useState(null);
- React.useEffect(() => {
-   superagent
-     .get("http://localhost:5000/application/movies")
-     .then(response => setMovie(response.body.movies));
->>>>>>> d5a9d6a69556ce216a1443b774e35cd03419a7d2
  }, []);
 
 
 
     return (
 
-<<<<<<< HEAD
 
     <div>
         <header >
 
             <Header movie={movie} setDisplayedMovie={setDisplayedMovie} research = {research} setResearch = {setResearch} />
-=======
-    <div>
-        <header >
-
-            <Header/>
->>>>>>> d5a9d6a69556ce216a1443b774e35cd03419a7d2
 
         </header>
 
@@ -68,14 +45,9 @@ const [movie, setMovie] = React.useState(null);
 
         <p className="list">  {DisplayedMovie && DisplayedMovie.map(movie => movie.date === 2019 ? <div> {movie.title} </div> : undefined)} </p>
 
-<<<<<<< HEAD
 
         <h1 className= "Rubrics">Tous les films</h1>
         <p className="list">  {DisplayedMovie && DisplayedMovie.map(movie => (<div> {movie.title} </div>))} </p>
-=======
-        <h1 className= "Rubrics">Tous les films</h1>
-        <p className="list">  {movie && movie.map(movie => (<div> {movie.title} </div>))} </p>
->>>>>>> d5a9d6a69556ce216a1443b774e35cd03419a7d2
         </div>
     )
 }
@@ -90,5 +62,3 @@ const MovieTitle = (props) => (
 )
 
 export default Home
-
-
