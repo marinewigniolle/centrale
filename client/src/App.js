@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import logo from './logo.svg';
-import popcorn from './popcorn2.png';
+import popcorn from './popcorn.png';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter} from "react-router-dom";
 import Home from './Home';
@@ -15,7 +15,7 @@ function App() {
             <h1><Link to="/protected">Ma page</Link></h1>
         <Route path="/login" component={Login} />
         <PrivateRoute path="/protected" component={Protected} />
-        <PrivateRoute path="/mapage" component={Home} />
+        <PrivateRoute path="/page" component={Home} />
         <hr />
       <p>Pas encore inscrit ?</p><Link to="/register">Inscrivez-vous !</Link>
         </ul>
