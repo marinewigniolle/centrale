@@ -4,22 +4,10 @@ import popcorn from './popcorn.png'
 import './Header.css';
 import Home from './Home'
 import superagent from 'superagent'
-<<<<<<< HEAD
 
 function Header(props) {
 
 
-=======
-
-function Header() {
-const [movie, setMovie] = React.useState(null);
- React.useEffect(() => {
-   superagent
-     .get("http://localhost:5000/application/movies")
-     .then(response => setMovie(response.body.movies));
- }, []);
-
->>>>>>> d5a9d6a69556ce216a1443b774e35cd03419a7d2
   return (
     <div className="App">
       <header className="genres">
@@ -36,14 +24,7 @@ const [movie, setMovie] = React.useState(null);
       <div className="genres2">
         <button
           className="Genre"
-<<<<<<< HEAD
           onClick={() => props.setDisplayedMovie(props.movie.filter(movie => movie.type === 'Comédie'))}
-=======
-
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => movie.filter(movie => movie.type = 'cartoon')}
->>>>>>> d5a9d6a69556ce216a1443b774e35cd03419a7d2
 
         >
           Comédie
