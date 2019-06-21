@@ -15,9 +15,9 @@ class MovieALLResource(Resource):
     @staticmethod
     @swag_from("../swagger/movie/GET_ALL.yml")
     def get():
-        """ Reeturn the list of movies """
+        """ Return the list of movies """
         movies = MovieALLRepository.get_all()
-        return jsonify({"movies": [movie.json for movie in movies]})
+        return jsonify(movies)
 
 class MovieResource(Resource):
     """ Verbs relative to the movies """
