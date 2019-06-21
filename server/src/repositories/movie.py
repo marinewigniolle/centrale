@@ -1,13 +1,27 @@
 """ Defines the User repository """
 
 from models import Movie
+from models import Marks
 
 class MovieALLRepository:
 
     @staticmethod
     def get_all():
-        movies=Movie.query.all()
-        return (movies)
+        movies = Movie.query.all()
+        marks = Marks.query.all()
+        dic={}
+        for movie in movies :
+            notes=[]
+            for note in marks :
+                if note.title == movie.title :
+                    notes.append(note.mark)
+            sum_notes = 0
+            n = len(marks)
+            for k in notes:
+                    sum_notes += k
+            average = sum_notes/n
+            dic[movie.title]=average
+        return dic
 
 
 class MovieRepository:

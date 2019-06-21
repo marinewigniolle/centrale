@@ -38,7 +38,7 @@ const [DisplayedMovie, setDisplayedMovie] = React.useState(null);
 
          <h1 className = "Rubrics">Les mieux notés</h1>
 
-         //<p className="list"> {DisplayedMovie && DisplayedMovie.map(movie => movie.note > 4 ? <div> {movie.title} </div> : undefined)} </p>
+         <p className="list"> {DisplayedMovie && DisplayedMovie.map(movie => movie.mark > 4 ? <div> {movie.title} </div> : undefined)} </p>
 
 
         <h1 className = "Rubrics">À l'affiche </h1>
