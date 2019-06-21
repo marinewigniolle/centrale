@@ -23,3 +23,4 @@ class Movie(db.Model, BaseModel, metaclass=MetaBaseModel):
         self.original_language = original_language
         self.type = type
         self.date = date
+        self.average = 0
