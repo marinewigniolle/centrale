@@ -5,6 +5,7 @@ import popcorn from './popcorn.png'
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter} from "react-router-dom";
 import Header from './Header';
+import './Header.css';
 import Movie from './movie';
 import Home from './Home';
 
@@ -12,8 +13,8 @@ function App() {
   return (
        <Router>
       <div className="App">
-        <img src={popcorn} className="App-logo" alt="logo" />
       <AuthButton />
+
         <ul>
         <h2><Link to="/home">Ma page</Link></h2>
         <Route path="/login" component={Login} />
@@ -115,12 +116,11 @@ class Login extends Component {
 
     return (
       <div>
+        <img src={popcorn} className="App-logo" alt="logo" />
         <p>Vous devez vous connecter pour accéder à votre page</p>
         <form action="">
-        <div>Identifiant :
-            <input type="text" name="userid"/></div>
-        <div>Mot de passe :
-            <input type="password" name="psw"/></div>
+        <div>Prénom :               <input type="text" name="userid"/></div>
+        <div>Nom :                    <input type="password" name="psw"/></div>
         </form>
         <button onClick={this.login}>Connexion</button>
       </div>

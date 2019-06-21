@@ -1,10 +1,11 @@
 import React from 'react';
-import './Home.css'
+import './Home.css';
+import Header from './Header';
 import Titanic from './Titanic.jpg'
 import MammaMia from './MammaMia.jpg'
 import Movie from './movie'
 import superagent from 'superagent'
-import Header from './Header'
+
 
 
 

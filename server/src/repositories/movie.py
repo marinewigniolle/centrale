@@ -9,7 +9,7 @@ class MovieALLRepository:
     def get_all():
         movies = Movie.query.all()
         marks = Marks.query.all()
-        dic={}
+        averages=[]
         for movie in movies :
             notes=[]
             for note in marks :
@@ -20,9 +20,13 @@ class MovieALLRepository:
             for k in notes:
                     sum_notes += k
             average = sum_notes/n
-            dic[movie.title]=average
-        return dic
+            averages.append(average)
+        enrich_movies = map(change,movies,averages)
+        return enrich_movies
 
+def change(movie, new_average):
+    movie.average = new_average
+    return movie.average
 
 class MovieRepository:
     """ The repository for the movie model """

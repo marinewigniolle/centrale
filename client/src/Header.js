@@ -9,16 +9,15 @@ function Header(props) {
 
 
   return (
-    <div className="App">
-      <header className="genres">
-
+    <div className="App-Header">
       <div className='beau'>
-
       <h1 className="title"> MyPopCorn
       </h1>
+
       <img src={popcorn} className="logo" alt="logo" />
 
       </div>
+      <header className="">
 
 
       <div className="genres2">
